@@ -26,6 +26,9 @@ dados_relevantes = df.drop(
 print(dados_relevantes['NR_PARTIDO'].value_counts(), "\n")  # valores com -1 são inválidos, faz que nem o nome do candidato seja válido
 print(dados_relevantes.shape[0])  # Conferindo a quantidade de linhas
 dados_relevantes = dados_relevantes[dados_relevantes['NR_PARTIDO'] != -1]  # removendo valores iguais a -1
-print(dados_relevantes['NR_PARTIDO'].value_counts())
+print(dados_relevantes['NR_PARTIDO'].value_counts(), "\n")
 print(dados_relevantes.shape[0])
 
+print(dados_relevantes['NM_VOTAVEL'].value_counts(), "\n")
+dados_relevantes = dados_relevantes[dados_relevantes['SG_PARTIDO'] != dados_relevantes['NM_VOTAVEL']]  # Removendo Nomes que constavam a sigla do partido
+print(dados_relevantes['NM_VOTAVEL'].value_counts())
