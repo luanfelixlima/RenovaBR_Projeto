@@ -1,0 +1,13 @@
+-- Quantidade de votos vencedores de cada município
+WITH SOMA_VOTOS AS 
+(
+	SELECT NM_VOTAVEL, SUM(QT_VOTOS) AS QT_VOTOS FROM resultados
+	GROUP BY NM_VOTAVEL
+)
+SELECT r.NM_MUNICIPIO, MAX(s.QT_VOTOS) AS MAX_VOTOS
+FROM resultados AS r inner join SOMA_VOTOS AS s
+on r.QT_VOTOS = s.QT_VOTOS
+GROUP BY NM_MUNICIPIO
+ORDER BY MAX_VOTOS DESC;
+
+
