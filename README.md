@@ -8,4 +8,3 @@ Exploração e Limpeza realizada através da Linguagem Python, e consultadas rea
 Passo a passo do processo:
 
 - Carregar as bases de dados através da biblioteca pandas no Python, criando assim, um DataFrame. 
-

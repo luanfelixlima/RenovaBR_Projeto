@@ -4,7 +4,7 @@ import pandas as pd
 # CARREGANDO OS DADOS em um DataFrame através da biblioteca "Pandas"
 df = pd.read_csv('database_desfio_renovaBR\\'
                  'eleitorado\\perfil_eleitorado_2020\\'
-                 'perfil_eleitorado_2020.csv', encoding='latin-1', sep=';')
+                 'perfil_eleitorado_2020.csv', encoding='latin-1', sep=';')  # PATH da base de dados
 
 
 # SELECIONANDO O ESTADO DE SP:
@@ -29,4 +29,10 @@ print(dados_relevantes_SP.head(5), "\n")  # head - mostra as primeiras linhas do
 print(dados_relevantes_SP['CD_FAIXA_ETARIA'].value_counts(), "\n")  # Podemos ver 268 dados inválidos
 dados_relevantes_SP = dados_relevantes_SP[dados_relevantes_SP['CD_FAIXA_ETARIA'] != -3]  # -3 é inválido segundo o dicionário de dados
 print(dados_relevantes_SP['CD_FAIXA_ETARIA'].value_counts())  # verificando se realmente apagamos registros de idades inválidas
-print(dados_relevantes_SP.shape)  # temos que ter 639502 - 268 linhas
+print(dados_relevantes_SP.shape, "\n")  # temos que ter 639502 - 268 linhas
+
+
+# EXPORTANDO OS DADOS LIMPOS:
+dados_relevantes_SP.to_csv('database_desfio_renovaBR\\dados_filtrados\\perfil_eleitorado.csv', sep=';',
+                           encoding='latin-1')
+print("Exportando dados...")
