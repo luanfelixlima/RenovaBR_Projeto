@@ -7,4 +7,10 @@ Exploração e Limpeza realizada através da Linguagem Python, e consultadas rea
 
 Passo a passo do processo:
 
-- Carregar as bases de dados através da biblioteca pandas no Python, criando assim, um DataFrame. 
+- Carregar as bases de dados através da biblioteca pandas no Python, criando assim, um DataFrame;
+- Analisar por filtros no Excel e visualizações de retorno no Python, se há dados inconsistentes com o dicionário de dados;
+- Deletar os dados inválidos e também colunas redundantes ou desnecessárias. Para assim realizar consultas e relatórios mais concisos;
+- Exportar as bases de dados limpas e importa-las em um SBGD, no caso foi usado o SQL Server;
+- Gerar querys e exportar as mesmas em um arquivo.sql.
+
+-------------------
